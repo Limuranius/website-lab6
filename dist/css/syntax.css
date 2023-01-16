@@ -1,0 +1,27 @@
+.upper-imgs,
+.lower-imgs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.upper-img {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+.lower-img {
+  width: 33.3%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+img {
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .upper-img {
+    width: 100%;
+  }
+  .lower-img {
+    width: 100%;
+  }
+}

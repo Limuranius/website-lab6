@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		title Страница
+		link(rel="stylesheet", href="css/base.css")
+		block styles
+		block variables
+	body
+		div.main
+			header
+				- 
+					let menu_items = [
+						{
+							text: "Главная страница",
+							active: false,
+							link: "index.html"
+						},{
+							text: "Список спутников",
+							active: false,
+							link: "table.html"
+						},
+					];
+				if active_index != -1
+					- menu_items[active_index].active = true;
+				
+				div.menu-banner
+					img(src="img/banner.jpg")
+
+				div.menu
+					each menu_item in menu_items
+						if menu_item.active
+							a.menu_item.menu_item__active(href=menu_item.link) #{menu_item.text}
+						else 
+							a.menu_item(href=menu_item.link) #{menu_item.text}
+
+			div.content
+				block content

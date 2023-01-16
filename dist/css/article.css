@@ -1,0 +1,20 @@
+.article-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.article-box>.left-menu {
+  width: 20%;
+  background-color: #2e2e8d;
+}
+.article-box>.left-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+.article-box>.left-menu a:hover {
+  text-decoration: underline;
+}
+.article-box>.article-content {
+  width: 80%;
+  padding: 10px;
+  box-sizing: border-box;
+}

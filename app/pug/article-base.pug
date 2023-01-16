@@ -1,0 +1,20 @@
+extends ./base.pug
+
+block variables
+	- let active_index = -1;
+
+block styles
+	link(rel="stylesheet", href="css/article.css")
+
+block content
+	div.article-box
+		div.left-menu
+			h2 Ссылки на другую информацию
+			p
+				a(href="article-info.html") Что такое спутник?
+			p
+				a(href="article-types.html") Категории спутников
+			p
+				a(href="article-history.html") История спутников
+		div.article-content
+			block article

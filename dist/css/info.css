@@ -1,0 +1,27 @@
+.info-box-1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.info-box-1 .text-box-1 {
+  width: 50%;
+}
+.info-box-1 .image-box-1 {
+  width: 50%;
+}
+.info-box-2 {
+  display: flex;
+  flex-direction: column;
+}
+p {
+  text-indent: 3em;
+  font-size: 1.5em;
+}
+img {
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .info-box-1 .text-box-1,
+  .info-box-1 .image-box-1 {
+    width: 100%;
+  }
+}

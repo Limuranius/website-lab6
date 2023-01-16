@@ -1,0 +1,74 @@
+extends ../base.pug
+
+block variables
+	- let active_index = 0;
+
+block styles
+	link(rel="stylesheet", href="css/index.css")
+
+block content
+	-
+		let imgs = [
+			{
+				src: "img/Sputnik1.jpg",
+				label: "Спутник-1",
+				url: "#"
+			},
+			{
+				src: "img/Sputnik2.jpg",
+				label: "Спутник-2",
+				url: "#"
+			},
+			{
+				src: "img/Vanguard 1A.jfif",
+				label: "Vanguard-1A",
+				url: "#"
+			},
+			{
+				src: "img/Explorer1.jpg",
+				label: "Explorer-1",
+				url: "#"
+			},
+			{
+				src: "img/Venera9.jpg",
+				label: "Венера-9",
+				url: "info.html"
+			},
+			{
+				src: "img/James Webb.jpg",
+				label: "Телескоп Джеймса Вебба",
+				url: "#"
+			},
+		]
+
+	h1 Добро пожаловать на страницу о спутниках!
+
+	hr
+	div.articles
+		div.article-card
+			div.article-card-title
+				h2 Что такое спутник?
+			div.article-card-content
+				p Здесь вы можете узнать, что такое ИСЗ, как они работает и зачем нужны.
+				a.card-link(href="article-info.html") Узнать больше
+		div.article-card
+			div.article-card-title
+				h2 Категории спутников
+			div.article-card-content
+				p Здесь описываются различные типы спутников и их применение.
+				a.card-link(href="article-types.html") Узнать больше
+		div.article-card
+			div.article-card-title
+				h2 История спутников
+			div.article-card-content
+				p Узнайте о первых спутниках и их последующем развитии.
+				a.card-link(href="article-history.html") Узнать больше
+	hr
+
+	h1 Интересные спутники
+	div.images
+		each img in imgs
+			div.image-card
+				img(src=img.src)
+				p.card-info #{img.label}
+				a.card-link(href=img.url) Узнать больше

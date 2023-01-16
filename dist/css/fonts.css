@@ -1,0 +1,18 @@
+.img-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.img {
+  width: 33.3%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+.img > img {
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .img {
+    width: 100%;
+  }
+}

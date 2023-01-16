@@ -1,0 +1,29 @@
+body {
+  background-color: #164b69;
+  font: 14px arial;
+}
+.menu_item {
+  text-decoration: none;
+  padding: 5px;
+}
+.menu_item__active {
+  background-color: #000080;
+}
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+p {
+  text-indent: 3em;
+  text-align: justify;
+  line-height: 2em;
+  letter-spacing: 1px;
+}
+.main {
+  min-width: 700px;
+  width: 60%;
+  padding: 10px;
+  background-color: #e3e3e3;
+  margin: auto;
+}
