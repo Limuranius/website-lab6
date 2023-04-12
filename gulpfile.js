@@ -23,11 +23,17 @@ gulp.task('pug', function(){
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', gulp.series(gulp.parallel('pug','stylus')));
+gulp.task('js', function(){
+  return gulp.src('app/js/*.*')
+    .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('build', gulp.series(gulp.parallel('pug','stylus','js')));
 
 gulp.task('watch', function(){
   gulp.watch('app/styl/**/*.*', gulp.series('stylus'));
   gulp.watch('app/pug/**/*.*', gulp.series('pug'));
+  gulp.watch('app/js/**/*.*', gulp.series('js'));
 });
 
 gulp.task('serve', function(){

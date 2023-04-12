@@ -15,3 +15,10 @@ tr:hover {
 th {
   color: #ffa500;
 }
+.manage-data {
+  display: flex;
+}
+.manage-data-item {
+  box-sizing: border-box;
+  width: 33%;
+}
