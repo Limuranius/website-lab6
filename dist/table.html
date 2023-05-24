@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>Страница</title>
     <link rel="stylesheet" href="css/base.css"/>
+    <script src="http://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="css/table.css"/>
+    <script type="text/javascript" src="js/table_data.js"></script>
     <script type="text/javascript" src="js/table.js"></script>
+    <script type="text/javascript" src="js/graph.js"></script>
   </head>
   <body>
     <div class="main">
@@ -28,19 +31,17 @@
                 </tr>
                 <tr>
                   <td>
-                    <input type="radio" name="ox" value="0"/>Год<br>
-                    <input type="radio" name="ox" value="1"/>Страна<br>
-                    <input type="radio" name="ox" value="3"/>Цель<br>
+                    <input type="radio" name="ox" value="Год" checked="checked"/>Год<br>
+                    <input type="radio" name="ox" value="Страна"/>Страна<br>
+                    <input type="radio" name="ox" value="Цель"/>Цель<br>
                   </td>
                   <td>
-                    <input type="radio" name="oy" value="0"/>Число запусков<br>
-                    <input type="radio" name="oy" value="1"/>Статус<br>
-                    <input type="radio" name="oy" value="3"/>Страна<br>
-                    <input type="radio" name="oy" value="4"/>Цель<br>
+                    <input type="radio" name="oy" value="Число запусков" checked="checked"/>Число запусков<br>
+                    <input type="radio" name="oy" value="Статус"/>Статус<br>
                   </td>
                 </tr>
               </table>
-              <input type="button" value="Построить график"/>
+              <input type="button" value="Построить график" onclick="onDrawGraphClicked(this.form)"/>
             </form>
           </div>
           <div class="filter manage-data-item">
@@ -130,6 +131,7 @@
             </form>
           </div>
         </div>
+        <svg></svg>
         <table id="satellite-table">
           <thead> 
             <tr>
@@ -142,6 +144,7 @@
               <th>Масса, кг.</th>
             </tr>
           </thead>
+          <tbody></tbody>
         </table>
       </div>
     </div>

@@ -1,5 +1,9 @@
 const headers = ["Год", "Название", "Ракета-носитель", "Страна", "Статус", "Цель", "Масса, кг."];
 
+function get_field_index(field) {
+    return headers.indexOf(field);
+}
+
 let filter_data = {
     year: {
         from: "",
@@ -97,21 +101,29 @@ function get_compare_function() {
 }
 
 
-async function get_json() {
-    const response = await fetch('js/table_data.json')
-    const json = await response.json()
-    return json
+// function get_json() {
+//     const response = await fetch('js/table_data.json')
+//     const json = await response.json()
+//     return json
+// }
+
+
+function get_sorted_filtered_data() {
+    // let data = await get_json();
+    let data = table_data
+    data = apply_filtering(data);
+    data.sort(get_compare_function());
+    return data;
 }
 
 
-async function fill_table() {
-    let data = await get_json();
-    data = apply_filtering(data);
-    data.sort(get_compare_function());
+function fill_table() {
+    let data = get_sorted_filtered_data();
 
     let table = document.getElementById("satellite-table");
+    let tbody = table.getElementsByTagName("tbody")[0];
     data.forEach((data_row) => {
-        let row = table.insertRow();
+        let row = tbody.insertRow();
         data_row.forEach((data_cell) => {
             row.insertCell().innerHTML = data_cell;
         });

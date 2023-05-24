@@ -7,7 +7,9 @@ block styles
 	link(rel="stylesheet", href="css/table.css")
 
 block scripts
+	script(type="text/javascript", src="js/table_data.js")
 	script(type="text/javascript", src="js/table.js")
+	script(type="text/javascript", src="js/graph.js")
 
 block content
 	h1 Список спутников
@@ -22,22 +24,18 @@ block content
 						th Результат
 					tr
 						td
-							input(type="radio" name="ox" value="0") 
+							input(type="radio" name="ox" value="Год" checked) 
 							| Год<br>
-							input(type="radio" name="ox" value="1") 
+							input(type="radio" name="ox" value="Страна") 
 							| Страна<br>
-							input(type="radio" name="ox" value="3") 
+							input(type="radio" name="ox" value="Цель") 
 							| Цель<br>
 						td
-							input(type="radio" name="oy" value="0") 
+							input(type="radio" name="oy" value="Число запусков" checked) 
 							| Число запусков<br>
-							input(type="radio" name="oy" value="1") 
+							input(type="radio" name="oy" value="Статус") 
 							| Статус<br>
-							input(type="radio" name="oy" value="3") 
-							| Страна<br>
-							input(type="radio" name="oy" value="4") 
-							| Цель<br>
-				input(type="button" value="Построить график")
+				input(type="button" value="Построить график", onclick="onDrawGraphClicked(this.form)")
 
 		div.filter.manage-data-item
 			h2 Фильтр
@@ -123,10 +121,13 @@ block content
 					| по убыванию? 
 					input(type="checkbox" name="descThird")   
 
+	svg
+
 	- let headers = ["Год", "Название", "Ракета-носитель", "Страна", "Статус", "Цель", "Масса, кг."]
 	table#satellite-table
 		thead 
 			tr
 				each header in headers
 					th #{header}
+		tbody
 	
